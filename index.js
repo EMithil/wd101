@@ -24,7 +24,7 @@ form.addEventListener('Submit', (event) => {
         return;
     }
 
-    const userKey = 'user_' + Date.now();
+    const key = 'user_' + Date.now();
     localStorage.setItem(userKey, JSON.stringify({
         name: form.name.value,
         email: form.email.value,
@@ -33,7 +33,7 @@ form.addEventListener('Submit', (event) => {
         acceptedTerms: form.acceptedTerms.checked
     }));
 
-    const userTableBody = document.getElementById('userTableBody');
+    const Body = document.getElementById('userTableBody');
     addRowToTable(userTableBody, {
         name: form.name.value,
         email: form.email.value,
@@ -43,7 +43,7 @@ form.addEventListener('Submit', (event) => {
     });
 });
 
-function addRowToTable(tableBody, userData) {
+function addrow(tableBody, userData) {
     const newRow = tableBody.insertRow();
 
     // Add borders and padding to each cell
